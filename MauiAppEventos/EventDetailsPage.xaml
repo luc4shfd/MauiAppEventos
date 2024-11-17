@@ -6,6 +6,7 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
+            
 
             <!-- Título do evento -->
             <Frame BackgroundColor="#2196F3" Padding="15" CornerRadius="10">
