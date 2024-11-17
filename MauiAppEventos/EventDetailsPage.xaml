@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEventos.EventDetailsPage"
+             Title="Resumo do Evento">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Título do evento -->
+            <Frame BackgroundColor="#2196F3" Padding="15" CornerRadius="10">
+                <Label Text="{Binding Nome}" 
+                       TextColor="White" 
+                       FontSize="24" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" 
+                       HorizontalTextAlignment="Center" />
+            </Frame>
+
+            <!-- Informações principais -->
+            <Frame BorderColor="#DDDDDD" CornerRadius="10" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Local do Evento" FontSize="18" FontAttributes="Bold" />
+                    <Label Text="{Binding Local}" FontSize="16" TextColor="#444444" />
+
+                    <Label Text="Data de Início" FontSize="18" FontAttributes="Bold" />
+                    <Label Text="{Binding DataInicio, StringFormat='{0:dd/MM/yyyy}'}" FontSize="16" TextColor="#444444" />
+
+                    <Label Text="Data de Término" FontSize="18" FontAttributes="Bold" />
+                    <Label Text="{Binding DataTermino, StringFormat='{0:dd/MM/yyyy}'}" FontSize="16" TextColor="#444444" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Cálculos e números -->
+            <Frame BorderColor="#DDDDDD" CornerRadius="10" Padding="15">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Duração do Evento (em dias)" FontSize="18" FontAttributes="Bold" />
+                    <Label Text="{Binding DuracaoDias}" FontSize="16" TextColor="#444444" />
+
+                    <Label Text="Número de Participantes" FontSize="18" FontAttributes="Bold" />
+                    <Label Text="{Binding NumeroParticipantes}" FontSize="16" TextColor="#444444" />
+
+                    <Label Text="Custo por Participante (R$)" FontSize="18" FontAttributes="Bold" />
+                    <Label Text="{Binding CustoPorParticipante, StringFormat='R${0:F2}'}" FontSize="16" TextColor="#444444" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Custo total -->
+            <Frame BackgroundColor="#4CAF50" Padding="15" CornerRadius="10">
+                <VerticalStackLayout>
+                    <Label Text="Custo Total do Evento" 
+                           TextColor="White" 
+                           FontSize="20" 
+                           FontAttributes="Bold" 
+                           HorizontalOptions="Center" />
+
+                    <Label Text="{Binding CustoTotal, StringFormat='R${0:F2}'}" 
+                           TextColor="White" 
+                           FontSize="28" 
+                           FontAttributes="Bold" 
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Botão para voltar -->
+            <Button Text="Voltar" 
+                    BackgroundColor="#2196F3" 
+                    TextColor="White" 
+                    FontAttributes="Bold" 
+                    Clicked="OnBackClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
